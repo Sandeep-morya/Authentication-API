@@ -7,7 +7,6 @@ const login = Router();
 /* variables & Error Messages*/
 const inputError = "You need to send details in details key. Read Docs";
 const notFound = "Your details not matched with our system";
-const unexpected = "Something went wrong";
 const key = "Sandeep-morya-authentication-api";
 
 login.post("/", async (req, res) => {
@@ -15,8 +14,11 @@ login.post("/", async (req, res) => {
 
 	if (details) {
 		try {
-			const data = await UserModel.findOne(details);
+			if (!details.password) {
+				throw new Error();
+			}
 
+			const data = await UserModel.findOne(details);
 			if (!data) {
 				throw new Error();
 			}

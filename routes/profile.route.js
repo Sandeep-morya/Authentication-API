@@ -11,7 +11,6 @@ const key = "Sandeep-morya-authentication-api";
 
 profile.post("/", async (req, res) => {
 	const token = req.headers.authorization;
-    console.log(token);
 	try {
 		const decoded = jwt.verify(token,key)
         res.send(decoded.profile)
