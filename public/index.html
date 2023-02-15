@@ -1,12 +1,161 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth API</title>
-</head>
-<body>
-    Homepage
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Auth API</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="heading">
+			<h1>Authentication API</h1>
+			<h3>
+				Authentication System Build using Express, Mongoose & MongoDB as backend
+			</h3>
+			<div class="link">
+				<p>Base URL :</p>
+				<a href="https : //auth-api-6b8l.onrender.com"
+					>https : //auth-api-6b8l.onrender.com/</a
+				>
+			</div>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th>URL</th>
+					<th>Method</th>
+					<th>Functionality</th>
+					<th>Usage</th>
+					<th>Returns</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>/register</td>
+					<td>POST</td>
+					<td>Registeration</td>
+					<td>
+						<div class="code">
+							send in body<br />
+							&nbsp;{<br />
+							&nbsp;&nbsp;&nbsp;username : unique username & it is required,<br />
+							&nbsp;&nbsp;&nbsp;email : unique email & it is required,<br />
+							&nbsp;&nbsp;&nbsp;password : any text & it is required,<br />
+							&nbsp;&nbsp;&nbsp;name : any text & it is required,<br />
+							&nbsp;&nbsp;&nbsp;gender : any text & it is optional,<br />
+							&nbsp;&nbsp;&nbsp;age : any number & it is optional,<br />
+							&nbsp;&nbsp;&nbsp;image : web url & it is optional,<br />
+							&nbsp;}<br />
+						</div>
+					</td>
+					<td>New <br />Registered <br />Object</td>
+				</tr>
+				<tr>
+					<td>/login</td>
+					<td>POST</td>
+					<td>Login</td>
+					<td>
+						<div class="code">
+							send in body<br />
+							{<br />
+							&nbsp;details : {<br />
+							&nbsp;&nbsp;&nbsp;username : username,<br />
+							&nbsp;&nbsp;&nbsp;or<br />
+							&nbsp;&nbsp;&nbsp;email : email,<br />
+							&nbsp;&nbsp;&nbsp;with<br />
+							&nbsp;&nbsp;&nbsp;password : password,<br />
+							&nbsp;}<br />
+							}<br />
+						</div>
+					</td>
+					<td>
+						A Random<br />
+						Token
+					</td>
+				</tr>
+				<tr>
+					<td>/profile</td>
+					<td>POST</td>
+					<td>View Profile</td>
+					<td>
+						<div class="code">
+							send as headers<br />
+							&nbsp;{<br />
+							&nbsp;&nbsp;&nbsp;"Authorization" : token<br />
+							&nbsp;}<br />
+						</div>
+					</td>
+					<td>
+						User<br />
+						Object
+					</td>
+				</tr>
+				<tr>
+					<td>/reset</td>
+					<td>POST</td>
+					<td>
+						Check if<br />
+						User is<br />
+						Registered
+					</td>
+					<td>
+						<div class="code">
+							send in body <br />
+							&nbsp;{<br />
+							&nbsp;&nbsp;&nbsp;username : username,<br />
+							&nbsp;&nbsp;&nbsp;or<br />
+							&nbsp;&nbsp;&nbsp;email : email,<br />
+							&nbsp;}<br />
+						</div>
+					</td>
+					<td>User <br />Object</td>
+				</tr>
+				<tr>
+					<td>/reset/id</td>
+					<td>POST</td>
+					<td>reset any thing <br />link password</td>
+					<td>
+						<div class="code">
+							provide the userid as parmas <br />
+							send in body<br />
+							&nbsp;{<br />
+							&nbsp;&nbsp;&nbsp;password : "new password"<br />
+							&nbsp;}<br />
+							You can reset any details with /reset<br/>
+							like - email, username, image. <br/>
+						</div>
+					</td>
+					<td>Updated <br />User Object</td>
+				</tr>
+				<tr>
+					<td>/delete</td>
+					<td>POST</td>
+					<td>POST</td>
+					<td>
+						<div class="code">
+							send in body<br />
+							&nbsp;{<br />
+							&nbsp;&nbsp;&nbsp;email : email,<br />
+							&nbsp;&nbsp;&nbsp;password : password,<br />
+							&nbsp;}<br />
+						</div>
+					</td>
+					<td>Deleted<br />User<br />Object</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="footer">
+			<div>
+				<h2> Technoligies/Libaries Used</h2>
+				<br>
+			<h3>Express Mongoose Cors Jsonwebtoken mongoose-unique-validator dotenv</h3>
+			</div>
+			<h5 style="text-align:center">
+				@2023 Made By - Sandeep Morya
+			</h5>
+
+		</div>
+	</body>
 </html>
