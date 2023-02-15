@@ -1,13 +1,13 @@
 {
 	"name": "authentication-api",
-	"description": "An Auth API to Manage authentication for Developeres",
+	"description": "An Auth API to Manage authentication for Developers",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon index.js"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Sandeep-morya",
 	"license": "ISC",
 	"dependencies": {
 		"cors": "^2.8.5",
