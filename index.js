@@ -1,14 +1,17 @@
 ﻿const express = require("express");
+const cors = require("cors");
 const { PORT, connection } = require("./db/config/connection");
 const { register } = require("./routes/register.route");
-const {login} = require("./routes/login.route")
+const { login } = require("./routes/login.route");
+const { profile } = require("./routes/profile.route");
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
-app.use(express.static("public"))
+app.use(express.static("public"));
 app.use("/register", register);
 app.use("/login", login);
+app.use("/profile", profile);
 
 app.listen(PORT, async () => {
 	console.log("Server is running on PORT: " + PORT);

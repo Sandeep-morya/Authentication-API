@@ -3,6 +3,7 @@ const { UserModel } = require("../db/model");
 
 const register = Router();
 
+
 register.post("/", async (req, res) => {
 	try {
 		/* Trying to Register user */

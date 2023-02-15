@@ -1,5 +1,6 @@
 ﻿const { Schema } = require("mongoose");
 
+
 const userSchema = Schema(
 	{
 		username: { type: String, required: true, unique: true },
@@ -8,6 +9,7 @@ const userSchema = Schema(
 		name: { type: String, required: true },
 		gender: { type: String, required: true },
 		age: { type: Number, required: true },
+		image:{type:String}
 	},
 	{ versionKey: false },
 );
