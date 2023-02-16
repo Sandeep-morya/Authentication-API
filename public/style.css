@@ -75,3 +75,11 @@ tr td:nth-child(4) {
 h5 {
 	text-decoration: underline;
 }
+
+.note{
+	width: 60%;
+	margin: auto;
+	padding: 1rem;
+	text-align: center;
+	font-weight: bold;
+}

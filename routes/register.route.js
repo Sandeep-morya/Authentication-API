@@ -1,5 +1,6 @@
 ﻿const { Router } = require("express");
 const { UserModel } = require("../db/model");
+const bcrypt = require("bcrypt")
 
 const register = Router();
 
@@ -7,8 +8,10 @@ const register = Router();
 register.post("/", async (req, res) => {
 	try {
 		/* Trying to Register user */
-		const user = new UserModel(req.body);
+		const encrypted_password = await bcrypt.hash(req.body.password, 5)
+		const user = new UserModel({...req.body,password:encrypted_password});
 		const data = await user.save();
+
 		res.send({ err: false, data });
 
 	} catch ({errors}) {
