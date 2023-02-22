@@ -8,7 +8,7 @@ const profile = Router();
 /* variables */
 const unexpected = "Something went wrong";
 
-profile.post("/", async (req, res) => {
+profile.get("/", async (req, res) => {
 	const token = req.headers.authorization;
 	try {
 		const decoded = jwt.verify(token,KEY)
