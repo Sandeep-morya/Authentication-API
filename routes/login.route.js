@@ -32,7 +32,7 @@ login.post("/", async (req, res) => {
 
 			/* Comparing the password with the encrypted one */
 
-			const encryption = await bcrypt.compare(password, data.password);
+			const encryption = await bcrypt.compare(`${password}`, data.password);
 			if (encryption) {
 				/* Genrating the token with jwt & key of env file */
 				const token = jwt.sign({ profile: data }, KEY);

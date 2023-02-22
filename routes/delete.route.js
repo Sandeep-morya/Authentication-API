@@ -20,7 +20,7 @@ delete_user.delete("/", async (req, res) => {
 		}
 
 		/* Comparing the password with the encrypted one */
-		const encryption = await compare(password, user.password);
+		const encryption = await compare(`${password}`, user.password);
 		if (!encryption) throw new Error();
 
 		/* Finally Deleteing the Account */
