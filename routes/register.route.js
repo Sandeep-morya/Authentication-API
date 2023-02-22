@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt")
 
 const register = Router();
 
+const success = "Registration Successfull"
 
 register.post("/", async (req, res) => {
 	try {
@@ -12,7 +13,7 @@ register.post("/", async (req, res) => {
 		const user = new UserModel({...req.body,password:encrypted_password});
 		const data = await user.save();
 
-		res.send({ err: false, data });
+		res.send({ err: false, message:success, data });
 
 	} catch ({errors}) {
         /* Error Handling */

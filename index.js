@@ -4,7 +4,6 @@ const { PORT, connection } = require("./db/config/connection");
 const { register } = require("./routes/register.route");
 const { login } = require("./routes/login.route");
 const { profile } = require("./routes/profile.route");
-const { reset_user } = require("./routes/reset.route");
 const { delete_user } = require("./routes/delete.route");
 
 const app = express();
@@ -12,11 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
-app.use("/register", register);
-app.use("/login", login);
-app.use("/profile", profile);
-app.use("/reset", reset_user);
-app.use("/delete", delete_user);
+
+
+app.use("/register", register); //registration
+app.use("/login", login);  // login
+app.use("/profile", profile); // show profile
+app.use("/delete", delete_user); // delete Account
 
 app.listen(PORT, async () => {
 	console.log("Server is running on PORT: " + PORT);
